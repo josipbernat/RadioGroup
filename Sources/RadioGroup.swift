@@ -146,7 +146,7 @@ import UIKit
 
     func selectIndex(item: RadioGroupItem) {
         guard let index = stackView.arrangedSubviews.firstIndex(of: item) else { return }
-        selectedIndex = index
+        selectIndex(index)
         sendActions(for: [.valueChanged, .primaryActionTriggered])
     }
 
