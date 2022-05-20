@@ -150,6 +150,21 @@ import UIKit
         sendActions(for: [.valueChanged, .primaryActionTriggered])
     }
 
+    open var allowUnselection: Bool = true
+    func selectIndex(_ index: Int) {
+        
+        if allowUnselection {
+            if index == selectedIndex {
+                selectedIndex = -1
+            } else {
+                selectedIndex = index
+            }
+        } else {
+            selectedIndex = index
+        }
+        sendActions(for: [.valueChanged, .primaryActionTriggered])
+    }
+    
     // MARK: - Overrides
 
     public override init(frame: CGRect) {
